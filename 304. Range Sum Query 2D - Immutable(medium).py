@@ -17,7 +17,7 @@ class NumMatrix:
 
     def __init__(self, matrix: List[List[int]]):
         ROW, COL = len(matrix), len(matrix[0])
-        self.sumMat = [[0]*(ROW+1) for r in range(COL+1)] # List Comprehension
+        self.sumMat = [[0]*(COL+1) for r in range(ROW+1)] # List Comprehension
 
         # Prefix by columns
         for r in range(ROW):
