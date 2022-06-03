@@ -8,15 +8,27 @@
 # https://leetcode.com/problems/merge-sorted-array/
 
 
-
-#yet to submit
 nums1 = [1,2,3,0,0,0]
 m,n = 3,3
 nums2 = [2,5,6]
-
-nums1 = nums1[0:m]
-nums2 = nums2[0:n]
-
-nums1 = sorted(nums1+nums2)
-
+m,n = m-1,n-1
+i = len(nums1)-1
+while i>=0:
+    if m>=0 and n>=0:
+        if nums2[n]>=nums1[m]:
+            nums1[i]=nums2[n]
+            n-=1
+        else:
+            nums1[i]=nums1[m]
+            m-=1
+    else:
+        if m>n:
+            nums1[i]=nums1[m]
+            m-=1
+        else:
+            nums1[i]=nums2[n]
+            n-=1
+    i-=1
 print(nums1)
+
+
