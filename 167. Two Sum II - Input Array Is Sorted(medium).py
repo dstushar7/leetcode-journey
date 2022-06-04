@@ -15,8 +15,18 @@ def bruteforce(nums,target):
             if (nums[i]+nums[j])==target:
                 return [i,j]
 
-def dac_approach(numbers,target):
-    
+def pointer_approach(numbers,target):
+    i = 0
+    j = len(numbers)-1
+    while i<j:
+        if target==(numbers[i]+numbers[j]):
+            return [i+1,j+1]
+        elif target<(numbers[i]+numbers[j]):
+            j-=1
+        else:
+            i+=1
 
 
-print(bruteforce(numbers,target))
+
+
+print(pointer_approach(numbers,target))
