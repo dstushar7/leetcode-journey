@@ -15,4 +15,8 @@ def bruteforce(nums,target):
             if (nums[i]+nums[j])==target:
                 return [i,j]
 
+def dac_approach(numbers,target):
+    
+
+
 print(bruteforce(numbers,target))
