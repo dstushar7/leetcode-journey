@@ -77,6 +77,25 @@ def check_board_validity(board):
 
     return True
 
-print(check_board_validity(board))
+
 
 # Hardest that I solved alone :3
+def validSudoku_hashset(board):
+    row = {i:set() for i in range(9)}
+    col = {i:set() for i in range(9)}
+    square = {i:set() for i in range(9)}
+
+
+    for i in range(9):
+        for j in range(9):
+            if(board[i][j]=="."):
+                continue
+            if (board[i][j] in row[i]) or (board[i][j] in col[j]) or (board[i][j] in square[(i//3)*3+(j//3)]):
+                return False
+            else:
+                row[i].add(board[i][j])
+                col[j].add(board[i][j])
+                square[(i//3)*3+(j//3)].add(board[i][j])
+    return True
+
+print(validSudoku_hashset(board))
